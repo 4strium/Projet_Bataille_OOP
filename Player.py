@@ -4,7 +4,7 @@ class Joueur :
     
     def __init__(self, nom, nbCartes) :
         """
-        Initiamise un objet de type Joueur.
+        Initialise un objet de type Joueur.
         """
         self.nom = nom
         self.nbCartes = nbCartes
@@ -38,8 +38,8 @@ class Joueur :
         """
         return self.getpaquet_Main().pop()
     
-    def insererMain(self, win_cartes):
+    def insererMain(self, win_carte):
         """
-        Fonction qui insère les cartes de la liste des cartes gagnées dans la main du Joueur.
+        Fonction qui insère la carte gagnée dans la main du Joueur.
         """
-        self.mainJoueur.add_cartes(win_cartes)
+        self.mainJoueur.inserer_une_carte(win_carte)

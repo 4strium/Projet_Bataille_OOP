@@ -1,3 +1,4 @@
+from random import *
 
 class Main:
     """
@@ -13,3 +14,7 @@ class Main:
         
     def get_paquet(self):
         return self.cartes
+    
+    def inserer_une_carte(self, carte_a_inserer):
+        index = randint(0, len(self.cartes))
+        self.cartes.insert(index, carte_a_inserer)
