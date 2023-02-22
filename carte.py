@@ -40,11 +40,12 @@ class Carte:
                     self.value = valeurs[self.name]
             except :
                 pass
-            if str_val_dict[nom] in noms :
-                self.name = str_val_dict[nom]
-                self.value = valeurs[self.name]
-            else :
-                raise input_name_error
+            try :
+                if str_val_dict[nom] in noms :
+                    self.name = str_val_dict[nom]
+                    self.value = valeurs[self.name]
+            except :
+                pass
         except input_name_error :
             print("Le Numéro/Nom de la carte est invalide :",nom)
             exit()
@@ -74,11 +75,12 @@ class Carte:
                     self.value = valeurs[self.name]
             except :
                 pass
-            if str_val_dict[nom] in noms :
-                self.name = str_val_dict[nom]
-                self.value = valeurs[self.name]
-            else :
-                raise input_name_error
+            try :
+                if str_val_dict[nom] in noms :
+                    self.name = str_val_dict[nom]
+                    self.value = valeurs[self.name]
+            except :
+                pass
         except input_name_error :
             print("Le Numéro/Nom de la carte est invalide :",nom)
             exit()
@@ -131,7 +133,7 @@ class Carte:
         
     def estInferieureA(self, carte):
         """
-        Renvoie True si la valeur de self est inféreure à celle de carte,
+        Renvoie True si la valeur de self est inférieure à celle de carte,
         Renvoie False si ce n'est pas le cas.
         carte: Objet de type Carte
         """

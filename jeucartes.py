@@ -19,9 +19,7 @@ class JeuCartes:
         self.jeu=[] # self.jeu est une liste des self.nbCartes
         self.creerJeu()
 
-###########################################################################
-################# Définition des méthodes d'instances #####################
-###########################################################################
+
     def getTailleJeu(self):
         ''' Fonction qui retourne le nombre de cartes du jeu
         Valeur retournée: type int '''

@@ -57,9 +57,11 @@ class Bataille:
             
         
             if carte_temp_one.estSuperieureA(carte_temp_two) == True :
-                self.player1.insererMain(carte_temp_two)
+                self.player1.insererMain(carte_temp_one) # Il reprend sa carte
+                self.player1.insererMain(carte_temp_two) # Il prend la carte gagnée !
             elif carte_temp_one.estInferieureA(carte_temp_two) == True :
-                self.player2.insererMain(carte_temp_one)
+                self.player2.insererMain(carte_temp_one) # Il prend la carte gagnée !
+                self.player2.insererMain(carte_temp_two) # Il reprend sa carte
             elif carte_temp_one.egalite(carte_temp_two) == True :
                 
                 while carte_temp_one.egalite(carte_temp_two) == True :
@@ -86,21 +88,24 @@ class Bataille:
                     
                 
                 if carte_temp_one.estSuperieureA(carte_temp_two) == True :
-                    self.player1.insererMain(carte_temp_two)
+                    self.player1.insererMain(carte_temp_one) # Il reprend sa carte
+                    self.player1.insererMain(carte_temp_two) # Il prend la carte gagnée !
                         
                     for i in range(len(pile_egalite)) :
                         self.player1.insererMain(pile_egalite[i])
+                        # Il prend tout le paquet entassé depuis le début des égalités.
                         
                 elif carte_temp_one.estInferieureA(carte_temp_two) == True :
-                    self.player2.insererMain(carte_temp_one)
+                    self.player2.insererMain(carte_temp_one) # Il prend la carte gagnée !
+                    self.player2.insererMain(carte_temp_two) # Il reprend sa carte
                     
                     for i in range(len(pile_egalite)) :
                         self.player2.insererMain(pile_egalite[i])
-                    
+                        # Il prend tout le paquet entassé depuis le début des égalités.
                     
                            
             time.sleep(0.5) # Laisser le temps à l'utilisateur de voir les différents échanges
                 
 
-partie0 = Bataille(52, 26)
+partie0 = Bataille(52, 6)
 partie0.Jouer()
